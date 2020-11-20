@@ -2,7 +2,12 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+on_i = 1
 hook_add = '''
   let g:deoplete#enable_at_startup = 1
   call deoplete#custom#option({
@@ -23,6 +28,16 @@ repo = 'roxma/nvim-yarp'
 repo = 'roxma/vim-hug-neovim-rpc'
 
 [[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+depends = 'deoplete.nvim'
+on_ft = ['vue', 'rust']
+rev = 'next'
+build = 'bash install.sh'
+hook_add = '''
+source ~/.config/nvim/plugins/LanguageClient-neovim.rc.vim
+'''
+
+[[plugins]]
 repo = 'joshdick/onedark.vim'
 
 [[plugins]]
@@ -39,4 +54,7 @@ repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'posva/vim-vue'
 
