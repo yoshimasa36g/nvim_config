@@ -62,8 +62,13 @@ let g:airline#extensions#hunks#enabled = 0
 " ale settings
 
 let g:ale_fixers = {
-      \  'ruby': ['rubocop'],
-      \}
+      \ 'ruby': ['rubocop'],
+      \ 'html': [],
+      \ 'css': ['stylelint'],
+      \ 'javascript': ['eslint'],
+      \ 'vue': ['eslint']
+      \ }
+let g:ale_linter_aliases = {'vue': 'css'}
 let g:ale_fix_on_save = 1
 
 " Denite 
